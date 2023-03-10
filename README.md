@@ -8,6 +8,12 @@ The Django project was initialized using the command:
 django-admin startproject project .
 ```
 
+The api application was created using the command:
+
+```sh
+python manage.py startapp api
+```
+
 ## Table of Contents
 
 - [python-open-restaurant-django](#python-open-restaurant-django)
