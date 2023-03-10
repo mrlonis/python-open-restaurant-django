@@ -1,6 +1,12 @@
 # python-open-restaurant-django
 
-Demo API using Django with one route that takes a datetime string and returns open restaurants, if any
+Demo API using Django with one route that takes a datetime string and returns open restaurants, if any.
+
+The Django project was initialized using the command:
+
+```sh
+django-admin startproject project .
+```
 
 ## Table of Contents
 
