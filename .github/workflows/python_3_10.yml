@@ -9,6 +9,7 @@ env:
     api
     project
     manage.py
+  SECRET_KEY: github actions fake secret key
 
 jobs:
   build:
@@ -50,7 +51,6 @@ jobs:
         run: poetry run python manage.py test
         env:
           DEBUG: False
-          SECRET_KEY: github actions fake secret key
           DATABASE_USER: postgres
           DATABASE_PASSWORD: 123456
           DATABASE_HOST: localhost
