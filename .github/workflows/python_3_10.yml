@@ -10,6 +10,12 @@ env:
     project
     manage.py
   SECRET_KEY: github actions fake secret key
+  DEBUG: False
+  DATABASE_USER: postgres
+  DATABASE_PASSWORD: 123456
+  DATABASE_HOST: localhost
+  DATABASE_PORT: 5498
+  DATABASE_NAME: postgres
 
 jobs:
   build:
@@ -49,10 +55,3 @@ jobs:
 
       - name: Django Test
         run: poetry run python manage.py test
-        env:
-          DEBUG: False
-          DATABASE_USER: postgres
-          DATABASE_PASSWORD: 123456
-          DATABASE_HOST: localhost
-          DATABASE_PORT: 5498
-          DATABASE_NAME: postgres
