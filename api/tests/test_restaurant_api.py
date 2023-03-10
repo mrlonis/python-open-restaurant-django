@@ -23,36 +23,35 @@ class RestaurantAPITest(APITestCase):
     def setUp(self):
         self.url = "/api/restaurant/"
 
-    def test_create_restaurant(self):
+    def test_create(self):
         response = cast(Response, self.client.post(self.url, data=build_test_data(), format="json"))
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-    def test_get_restaurant(self):
-        # Create restaurant
+    def test_read(self):
+        # Create
         response = cast(Response, self.client.post(self.url, data=build_test_data(), format="json"))
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         post_response_json = response.json()
 
-        # Get restaurant
+        # Read
         url = f"{self.url}{post_response_json['id']}/"
         response = cast(Response, self.client.get(url, format="json"))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         get_response_json = response.json()
         self.assertEqual(post_response_json, get_response_json)
 
-    def test_get_restaurant_that_does_n0t_exist(self) -> None:
-        # Get restaurant
+    def test_read_does_not_exist(self) -> None:
         url = f"{self.url}{str(uuid.uuid4())}/"
         response = cast(Response, self.client.get(url, format="json"))
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-    def test_update_restaurant(self):
-        # Create restaurant
+    def test_update(self):
+        # Create
         response = cast(Response, self.client.post(self.url, data=build_test_data(), format="json"))
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         post_response_json = response.json()
 
-        # Update restaurant
+        # Update
         update_data = {
             "name": "updated restaurant name",
             "open_weekday": 1,
@@ -71,18 +70,18 @@ class RestaurantAPITest(APITestCase):
         self.assertEqual(put_response_json["close_weekday"], 1)
         self.assertEqual(put_response_json["close_time"], "01:00:00")
 
-    def test_delete_restaurant(self):
-        # Create restaurant
+    def test_delete(self):
+        # Create
         response = cast(Response, self.client.post(self.url, data=build_test_data(), format="json"))
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         post_response_json = response.json()
 
-        # Get restaurant
+        # Read
         url = f"{self.url}{post_response_json['id']}/"
         response = cast(Response, self.client.get(url, format="json"))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-        # Delete restaurant
+        # Delete
         url = f"{self.url}{post_response_json['id']}/"
         response = cast(Response, self.client.delete(url, format="json"))
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
