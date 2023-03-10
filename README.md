@@ -22,6 +22,7 @@ python manage.py startapp api
     - [.env File](#env-file)
     - [Required Build Packages](#required-build-packages)
     - [Docker](#docker)
+  - [Migrate the Database](#migrate-the-database)
   - [Linting](#linting)
   - [Testing](#testing)
 
@@ -43,6 +44,12 @@ Install Docker and run the following command to startup the database/api in Dock
 
 ```sh
 docker compose up --build --pull postgresql --remove-orphans -V --wait
+```
+
+## Migrate the Database
+
+```shell
+poetry run python manage.py migrate
 ```
 
 ## Linting
