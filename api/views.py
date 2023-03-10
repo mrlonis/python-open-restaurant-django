@@ -1,3 +1,14 @@
-from django.shortcuts import render  # noqa: F401; pylint: disable=unused-import
+from rest_framework import generics
 
-# Create your views here.
+from api.models import Restaurant
+from api.serializers import RestaurantSerializer
+
+
+class RestaurantListCreateAPI(generics.ListCreateAPIView):
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantSerializer
+
+
+class RestaurantAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantSerializer

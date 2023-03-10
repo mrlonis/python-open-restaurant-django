@@ -1,3 +1,5 @@
-from django.contrib import admin  # noqa: F401; pylint: disable=unused-import
+from django.contrib import admin
 
-# Register your models here.
+from api.models import Restaurant
+
+admin.site.register(Restaurant)
