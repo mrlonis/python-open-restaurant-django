@@ -1,0 +1,58 @@
+name: Python 3.10
+
+on: [push, pull_request]
+
+env:
+  PYTHON_VERSION: "3.10"
+  POETRY_VERSION: "1.4.0"
+  LINT_PATHS: >
+    api
+    project
+    manage.py
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      postgresql:
+        image: postgres:14
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: 123456
+          POSTGRES_DB: postgres
+        ports:
+          - 5498:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install poetry
+        run: pipx install poetry==${{ env.POETRY_VERSION }}
+
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: poetry
+
+      - name: Install Dependencies
+        run: poetry install --no-interaction --no-root --without dev
+        if: steps.cache_dependencies.outputs.cache-hit != 'true'
+
+      - name: Flake8
+        run: poetry run flake8 ${{ env.LINT_PATHS }}
+
+      - name: Pylint
+        run: poetry run pylint ${{ env.LINT_PATHS }}
+
+      - name: Django Test
+        run: poetry run python manage.py test
+        env:
+          DEBUG: False
+          SECRET_KEY: github actions fake secret key
+          DATABASE_USER: postgres
+          DATABASE_PASSWORD: 123456
+          DATABASE_HOST: localhost
+          DATABASE_PORT: 5498
+          DATABASE_NAME: postgres

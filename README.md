@@ -20,17 +20,44 @@ python manage.py startapp api
   - [Table of Contents](#table-of-contents)
   - [Pre-requisites](#pre-requisites)
     - [.env File](#env-file)
+    - [Required Build Packages](#required-build-packages)
+    - [Docker](#docker)
+  - [Linting](#linting)
+  - [Testing](#testing)
 
 ## Pre-requisites
 
 ### .env File
 
-Create a .env file in the root directory with the following variables:
+Create a .env file in the root directory of your project based off of the `.env.sample` file.
+
+### Required Build Packages
+
+```shell
+sudo apt-get install gcc libpq-dev python3-dev
+```
+
+### Docker
+
+Install Docker and run the following command to startup the database/api in Docker:
 
 ```sh
-DATABASE_USER=postgres
-DATABASE_PASSWORD=123456
-DATABASE_HOST=localhost
-DATABASE_PORT=5432
-DATABASE_NAME=postgres
+docker compose up --build --pull postgresql --remove-orphans -V --wait
+```
+
+## Linting
+
+To lint the project, run the following commands:
+
+```shell
+poetry run flake8 api project manage.py
+poetry run pylint api project manage.py
+```
+
+## Testing
+
+To run the tests, be sure you have ran the [Docker Compose Command](#docker), then run the following command:
+
+```sh
+poetry run python manage.py test
 ```

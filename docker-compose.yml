@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  postgresql:
+    image: postgres:14
+    healthcheck:
+      test: [ 'CMD', 'pg_isready', '-U', 'postgres' ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data/
+    ports:
+      - 5499:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: postgres
+
+volumes:
+  postgresql_data:
+    driver: local
