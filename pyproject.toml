@@ -26,3 +26,17 @@ tomlkit = "^0.11.6"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 125
+
+[tool.isort]
+line_length = 125
+profile = "black"
+
+[tool.pytest.ini_options]
+addopts = "--ignore=./utility-repo-scripts"
+log_cli = false
+log_cli_level = "WARNING"
+log_cli_format = "%(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)"
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"

@@ -1,0 +1,30 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        name: isort (python)
+        args: [--settings-file=pyproject.toml]
+  - repo: https://github.com/psf/black
+    rev: 23.1.0
+    hooks:
+      - id: black # Configure in pyproject.toml
+  - repo: local
+    hooks:
+      - id: pylint
+        name: pylint
+        entry: utility-repo-scripts/ensure_venv.sh
+        language: script
+        types: [python]
+        args: [pylint, -v, --rcfile=.pylintrc]
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8
+        args: [--config=.flake8]
