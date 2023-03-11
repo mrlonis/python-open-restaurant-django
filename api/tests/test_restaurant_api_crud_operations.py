@@ -21,7 +21,7 @@ class RestaurantAPITest(APITestCase):
     client: APIClient
 
     def setUp(self):
-        self.url = "/api/restaurant/"
+        self.url = "/api/restaurants"
 
     def test_create(self):
         response = cast(Response, self.client.post(self.url, data=build_test_data(), format="json"))
@@ -34,7 +34,7 @@ class RestaurantAPITest(APITestCase):
         post_response_json = response.json()
 
         # Read
-        url = f"{self.url}{post_response_json['id']}/"
+        url = f"{self.url}/{post_response_json['id']}"
         response = cast(Response, self.client.get(url, format="json"))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         get_response_json = response.json()
@@ -59,7 +59,7 @@ class RestaurantAPITest(APITestCase):
             "close_weekday": 1,
             "close_time": time(1, 0, 0),
         }
-        url = f"{self.url}{post_response_json['id']}/"
+        url = f"{self.url}/{post_response_json['id']}"
         response = cast(Response, self.client.put(url, data=update_data, format="json"))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         put_response_json = response.json()
@@ -77,11 +77,11 @@ class RestaurantAPITest(APITestCase):
         post_response_json = response.json()
 
         # Read
-        url = f"{self.url}{post_response_json['id']}/"
+        url = f"{self.url}/{post_response_json['id']}"
         response = cast(Response, self.client.get(url, format="json"))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
         # Delete
-        url = f"{self.url}{post_response_json['id']}/"
+        url = f"{self.url}/{post_response_json['id']}"
         response = cast(Response, self.client.delete(url, format="json"))
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
