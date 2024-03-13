@@ -327,13 +327,13 @@ files = [
 
 [[package]]
 name = "parameterized"
-version = "0.8.1"
+version = "0.9.0"
 description = "Parameterized testing with any Python test framework"
 optional = false
-python-versions = "*"
+python-versions = ">=3.7"
 files = [
-    {file = "parameterized-0.8.1-py2.py3-none-any.whl", hash = "sha256:9cbb0b69a03e8695d68b3399a8a5825200976536fe1cb79db60ed6a4c8c9efe9"},
-    {file = "parameterized-0.8.1.tar.gz", hash = "sha256:41bbff37d6186430f77f900d777e5bb6a24928a1c46fb1de692f8b52b8833b5c"},
+    {file = "parameterized-0.9.0-py2.py3-none-any.whl", hash = "sha256:4e0758e3d41bea3bbd05ec14fc2c24736723f243b28d702081aef438c9372b1b"},
+    {file = "parameterized-0.9.0.tar.gz", hash = "sha256:7fc905272cefa4f364c1a3429cbbe9c0f98b793988efb5bf90aac80f08db09b1"},
 ]
 
 [package.extras]
@@ -759,4 +759,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "1ae49b6f54d35a10702f912e1334c262d734b1f173e89254fc564198f35be7d6"
+content-hash = "ba9863fd4f535f0190d3ddce34f8fdb98f1d6deb1d0e27c48a1f8921b884d62e"
