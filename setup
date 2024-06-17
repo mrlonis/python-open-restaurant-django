@@ -6,7 +6,6 @@ source utility-repo-scripts/setup_python_app.sh \
 	--debug \
 	--package_manager="poetry" \
 	--rebuild_venv="$rebuild_venv" \
-	--python_version="3.10" \
 	--include_isort \
 	--python_formatter="black" \
 	--pylint_enabled \
