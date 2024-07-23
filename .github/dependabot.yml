@@ -8,14 +8,14 @@ updates:
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
-      interval: "daily"
-  - package-ecosystem: "pip"
-    directory: "/"
+      interval: 'daily'
+  - package-ecosystem: 'pip'
+    directory: '/'
     schedule:
-      interval: "daily"
+      interval: 'daily'
     allow:
-      - dependency-type: "all"
-  - package-ecosystem: "gitsubmodule"
-    directory: "/"
+      - dependency-type: 'all'
+  - package-ecosystem: 'gitsubmodule'
+    directory: '/'
     schedule:
-      interval: "daily"
+      interval: 'daily'
