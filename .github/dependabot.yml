@@ -15,6 +15,7 @@ updates:
       interval: 'daily'
     allow:
       - dependency-type: 'all'
+    open-pull-requests-limit: 20
   - package-ecosystem: 'gitsubmodule'
     directory: '/'
     schedule:
