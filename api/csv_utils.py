@@ -113,7 +113,7 @@ def _process_time(time_str: str) -> tuple[time, str, time, str]:
     return open_time, open_time_am_pm, close_time, close_time_am_pm
 
 
-def _build_restaurants(
+def _build_restaurants(  # pylint: disable=too-many-positional-arguments
     name: str,
     weekday_range: list[int],
     open_time: time,
