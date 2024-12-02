@@ -17,7 +17,7 @@ psycopg2 = "^2.9.10"
 [tool.poetry.group.test.dependencies]
 flake8 = "^7.1.1"
 parameterized = "^0.9.0"
-pylint = "^3.2.7"
+pylint = "^3.3.2"
 pylint-django = "^2.6.1"
 pylint-junit = "^0.3.2"
 
