@@ -1,4 +1,4 @@
-name: Python 3.12
+name: Python
 
 on:
   push:
@@ -7,8 +7,8 @@ on:
     branches: ['main']
 
 env:
-  PYTHON_VERSION: '3.12'
-  POETRY_VERSION: '1.8.3'
+  PYTHON_VERSION: '3.13.1'
+  POETRY_VERSION: '1.8.5'
   LINT_PATHS: >
     api
     project
