@@ -7,8 +7,8 @@ on:
     branches: ['main']
 
 env:
-  PYTHON_VERSION: '3.13.1'
-  POETRY_VERSION: '2.0.0'
+  PYTHON_VERSION: '3.13.9'
+  POETRY_VERSION: '2.2.1'
   LINT_PATHS: >
     api
     project
