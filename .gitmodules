@@ -1,4 +1,0 @@
-[submodule "utility-repo-scripts"]
-	path = utility-repo-scripts
-	url = https://github.com/mrlonis/utility-repo-scripts.git
-	branch = main
