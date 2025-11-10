@@ -22,10 +22,10 @@ pylint-django = "^2.6.1"
 pylint-junit = "^0.3.5"
 
 [tool.poetry.group.dev.dependencies]
-black = "^25.1.0"
+black = "^25.11.0"
 configupdater = "^3.1.1"
 isort = "^6.0.1"
-pre-commit = "^4.2.0"
+pre-commit = "^4.4.0"
 ruamel-yaml = "^0.18.14"
 tomlkit = "^0.13.3"
 
