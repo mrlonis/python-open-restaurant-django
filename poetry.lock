@@ -21,7 +21,7 @@ version = "4.0.4"
 description = "An abstract syntax tree for Python with inference support."
 optional = false
 python-versions = ">=3.10.0"
-groups = ["dev", "test"]
+groups = ["test"]
 files = [
     {file = "astroid-4.0.4-py3-none-any.whl", hash = "sha256:52f39653876c7dec3e3afd4c2696920e05c83832b9737afc21928f2d2eb7a753"},
     {file = "astroid-4.0.4.tar.gz", hash = "sha256:986fed8bcf79fb82c78b18a53352a0b287a73817d6dbcfba3162da36667c49a0"},
@@ -184,14 +184,14 @@ bcrypt = ["bcrypt (>=4.1.1)"]
 
 [[package]]
 name = "django-environ"
-version = "0.12.0"
+version = "0.12.1"
 description = "A package that allows you to utilize 12factor inspired environment variables to configure your Django application."
 optional = false
 python-versions = "<4,>=3.9"
 groups = ["main"]
 files = [
-    {file = "django_environ-0.12.0-py2.py3-none-any.whl", hash = "sha256:92fb346a158abda07ffe6eb23135ce92843af06ecf8753f43adf9d2366dcc0ca"},
-    {file = "django_environ-0.12.0.tar.gz", hash = "sha256:227dc891453dd5bde769c3449cf4a74b6f2ee8f7ab2361c93a07068f4179041a"},
+    {file = "django_environ-0.12.1-py2.py3-none-any.whl", hash = "sha256:064ba2d5082f833e6d7fe4def4928bde1eedc0248a417575da7db147aeec1c20"},
+    {file = "django_environ-0.12.1.tar.gz", hash = "sha256:22859c6e905ab7637fa3348d1787543bb4492f38d761104a3ce0519b7b752845"},
 ]
 
 [package.extras]
@@ -754,4 +754,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.13.9"
-content-hash = "ac12dbaf9cf96c9f18986e2dc54cec047767284697ec8b9308b904437cf2802b"
+content-hash = "72cb83e6c5954a47ce65e14f6b828c12e08eb243a189ba080b8a4740fcc01a1d"
