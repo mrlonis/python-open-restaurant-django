@@ -10,7 +10,7 @@ package-mode = false
 [tool.poetry.dependencies]
 python = "^3.13.9"
 django = "^6.0"
-django-environ = "^0.12.1"
+django-environ = "^0.13.0"
 djangorestframework = "^3.16.0"
 psycopg2 = "^2.9.10"
 
