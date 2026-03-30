@@ -11,7 +11,7 @@ package-mode = false
 python = "^3.13.9"
 django = "^6.0"
 django-environ = "^0.13.0"
-djangorestframework = "^3.17.0"
+djangorestframework = "^3.17.1"
 psycopg2 = "^2.9.10"
 
 [tool.poetry.group.test.dependencies]
