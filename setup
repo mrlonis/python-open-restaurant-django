@@ -1,11 +1,30 @@
 #!/bin/bash
 git submodule update --init --remote --force
-rebuild_venv="$1"
-rebuild_venv="${rebuild_venv:-0}"
+rebuild_venv=0
+if [ $# -gt 0 ]; then
+	if [ "$1" = "0" ] || [ "$1" = "1" ]; then
+		rebuild_venv="$1"
+		shift
+	elif [[ "$1" != -* ]]; then
+		echo "Invalid rebuild_venv positional argument: ($1). Valid values are [0, 1]" >&2
+		exit 2
+	fi
+fi
 source utility-repo-scripts/setup_python_app.sh \
 	--debug \
+	--python_version="3.14.3" \
 	--package_manager="poetry" \
 	--rebuild_venv="$rebuild_venv" \
+	--include_jumanji_house \
+	--include_prettier \
+	--include_isort \
+	--isort_profile="black" \
 	--python_formatter="black" \
+	--pylint_enabled \
+	--flake8_enabled \
+	--mypy_enabled \
+	--pytest_enabled \
+	--pre_commit_autoupdate \
 	--overwrite_vscode_launch \
-	--line_length=125
+	--line_length=125 \
+	"$@"
