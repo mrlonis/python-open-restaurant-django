@@ -27,7 +27,7 @@ configupdater = "^3.1.1"
 isort = "^8.0.1"
 pre-commit = "^4.5.1"
 ruamel-yaml = "^0.19.1"
-tomlkit = "^0.14.0"
+tomlkit = ">=0.14,<0.16"
 
 [build-system]
 requires = ["poetry-core"]
