@@ -118,18 +118,15 @@ files = [
 
 [[package]]
 name = "configupdater"
-version = "3.2"
+version = "4.0.1"
 description = "Parser like ConfigParser but for updating configuration files"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.11"
 groups = ["dev"]
 files = [
-    {file = "ConfigUpdater-3.2-py2.py3-none-any.whl", hash = "sha256:0f65a041627d7693840b4dd743581db4c441c97195298a29d075f91b79539df2"},
-    {file = "ConfigUpdater-3.2.tar.gz", hash = "sha256:9fdac53831c1b062929bf398b649b87ca30e7f1a735f3fbf482072804106306b"},
+    {file = "configupdater-4.0.1-py3-none-any.whl", hash = "sha256:943896f322c232ba2ebdb43ed6215d3354ea6e55bc429b37df0707863cf391c0"},
+    {file = "configupdater-4.0.1.tar.gz", hash = "sha256:fe9bcd77beaa143eb515d2fa8e4b94a99b70bf2ffaaaed375685dffcb6dceb7e"},
 ]
-
-[package.extras]
-testing = ["flake8", "pytest", "pytest-cov", "pytest-randomly", "pytest-xdist", "sphinx"]
 
 [[package]]
 name = "dill"
@@ -800,4 +797,4 @@ python-discovery = ">=1.6.1"
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.14.3"
-content-hash = "d73c0842c1f27a3ad1af1fe2e43faa91b54ff265c1fa8acbefdbb31a6d8f4e88"
+content-hash = "8df0a9da575519b234861887f01a7e1f300e54d06cc428a7addc3b1ed6ed2553"
